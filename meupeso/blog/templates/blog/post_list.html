@@ -4,7 +4,16 @@
     </head>
     <body>
 	<a href=""><h1>Meu blog</h1></a>
-        <p>Olá!</p>
-        <p>Funcionou!</p>
+        <h2>Veja alguns posts:</h2>
+
+	{% for post in posts %}
+    	<div>
+		<h3>{{ post.titulo }}</h3>
+		<h4>{{ post.data_publicacao }}</h4>
+
+		{{ post.texto|linebreaks }}
+	</div>
+	{% endfor %}
+
     </body>
 </html>
